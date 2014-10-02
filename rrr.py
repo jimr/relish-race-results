@@ -26,7 +26,7 @@ def build_dataset(pdf):
 
             rows.append(row)
 
-    return tablib.Dataset(header, *rows)
+    return tablib.Dataset(header, *rows, title="Results")
 
 
 def results(pdf, fmt='csv'):
