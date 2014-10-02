@@ -21,7 +21,7 @@ def index():
 def results():
     fmt = request.form.get('format', 'csv')
     pdf = request.files['file']
-    filename = '{}-results.{}'.format(pdf.filename[:-4], fmt)
+    filename = '{}.{}'.format(pdf.filename[:-4], fmt)
 
     response = make_response(rrr.results(pdf, fmt))
     response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
