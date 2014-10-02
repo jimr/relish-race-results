@@ -22,6 +22,7 @@ def index():
 def results():
     fmt = request.args.get('format', 'csv')
     filename = 'results.{}'.format(fmt)
+    print request.args
 
     response = make_response(rrr.results(request.files['file'], fmt))
     response.headers['Content-Type'] = mimetypes.guess_type(filename)[0]
